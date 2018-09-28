@@ -1,5 +1,5 @@
 # Chat
 
-Introduccion.
+# Introduccion.
 
-Es una solucion con varios ejemplo creados con signalr
+Es una solución con varios ejemplo creados con signalr
