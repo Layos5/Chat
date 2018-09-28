@@ -1,0 +1,73 @@
+﻿
+@{
+    ViewBag.Title = "Language Understanding Intelligent Service";
+}
+
+<div class="container">
+    <div class="row">
+        <h1 class="col-xs-12" id="who_is">Language Understanding Intelligent Service</h1>
+    </div>
+
+    <input type="hidden" id="displayname" />
+    <br />
+    <div class="row">
+        <div class="col-xs-12 col-lg-12" id="onlineUsers">
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <input type="text" id="chat-input" placeholder="To chat, type here and press Enter!" class="form-control" />
+            <hr />
+            <div id="chat-window">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+
+        var params = { "timezoneOffset": "0", "verbose": "false", "spellCheck": "false", "staging": "false", };
+        var chatInput = $("#chat-input");
+        var chatWindow = $("#chat-window");
+
+        chatInput.keydown(function (e) {
+
+            if (e.which === 13) {
+                var message = chatInput.val();
+
+
+                $.ajax({
+                    url: "https://westcentralus.api.cognitive.microsoft.com/luis/v2.0/apps/64a86a46-3bbe-461f-a4a5-dde43b51da96?"+ $.param(params) +"&q=" + message,
+                    beforeSend: function (xhrObj) {
+                        // Request headers
+                        xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key", "fa9a3f6c026e466a8fd2a50aab7a6d4d");
+                    },
+                    type: "GET",
+                    // The request body may be empty for a GET request
+                    data: "{body}",
+                })
+                .done(function (data) {
+                    chatWindow.append("<div><strong>intent: </strong>" + data.topScoringIntent.intent + "</div>");
+
+                    chatWindow.append("<div><strong>Query: </strong>" + data.query + "</div>");
+
+                    data.entities.forEach(f =>  chatWindow.append("<div><strong>Entidad: </strong>" + f.entity + "</div>"))
+
+                    //empty the textbox
+                    chatInput.val("");
+
+                    //focus cursor on the textbox for easy chatting!
+                    self.focus();
+                })
+                .fail(function () {
+                    alert("error");
+                });
+            }
+        });
+
+
+    });
+</script>

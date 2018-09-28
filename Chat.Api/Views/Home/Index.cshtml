@@ -1,0 +1,51 @@
+﻿<div id="main_Menu" class="modal" role="dialog" data-backdrop="static">
+    <div class="modal-dialog">
+
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Dummie SignarlR Manager</h4>
+            </div>
+            <div class="modal-body">
+                <div class="menu_signalr">
+                    <a href="@Url.Action("index", "Chat", new { })" target="_blank" class="btn btn-circle-lg btn-danger"><span class="fa fa-weixin"></span></a>
+                    <a href="Notify.html" target="_blank" class="btn btn-circle-lg btn-warning"><span class="fa fa-flag"></span></a>
+                    <a href="@Url.Action("index", "Cam", new { })" target="_blank" class="btn btn-circle-lg btn-success"><span class="fa fa-camera"></span></a>
+                    <a href="@Url.Action("index", "Streaming", new { })" target="_blank" class="btn btn-circle-lg btn-danger"><span class="fa fa-video-camera"></span></a>
+                    <a href="@Url.Action("index", "Board", new { })" target="_blank" class="btn btn-circle-lg btn-warning"><span class="fa fa-clipboard"></span></a>
+                    <a href="@Url.Action("index", "Luis", new { })" target="_blank" class="btn btn-circle-lg btn-success"><span class="fa fa-connectdevelop"></span></a>
+                    <a id="show_info" class="btn btn-circle-lg btn-info"><span class="fa fa-thumbs-up"></span></a>
+                </div>
+            </div>
+            <ul id="info" style="display:none;" class="list-group">
+                <li class="list-group-item" style="border-radius: 0;">El chat permite simular un dispositivo conectado para probar envio de mensajes</li>
+                <li class="list-group-item" style="border-radius: 0;">Las notificaciones permiten crear notificaciones que se envian a todo los usuarios conectados bajo el perfil que se ingresa (En Construcción)</li>
+                <li class="list-group-item" style="border-radius: 0;">La camara permite acceder a las camaras conectadas al dispositivo y tomar fotos (Beta)</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    $(document).ready(function () {
+        $("#main_Menu").modal("toggle");
+    });
+    $("#show_info").click(function (evt) {
+        $("#info").toggle();
+    });
+</script>
+<style>
+    .menu_signalr {
+        text-align: center;
+    }
+
+    .btn-circle-lg {
+        width: 79px;
+        height: 79px;
+        text-align: center;
+        padding: 13px 0;
+        font-size: 30px;
+        line-height: 2.00;
+        border-radius: 70px;
+    }
+</style>

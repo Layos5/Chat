@@ -1,0 +1,24 @@
+﻿<div style="margin:1% auto;width:50%">
+    <div class="col-md-6 form-group">
+        <button id="reset" class="btn btn-success btn-block" style="float:left;">Limpiar</button>
+    </div>
+    <div class="col-md-6 form-group">
+        <button id="resetImg" class="btn btn-success btn-block" style="float:left;">Borrar Todo</button>
+    </div>
+</div>
+<div style="margin:auto;width:10%">
+    <div class="form-group">
+        <label for="file-input" style="width:100%;">
+            <img src="http://goo.gl/pB9rpQ" width="80" style="display:block; margin:0 auto;cursor:pointer" />
+        </label>
+
+        <input type="file" id="file-input" onchange="previewFile(this)" style="display:none;" multiple/>
+    </div>
+</div>
+
+<div id="canvas-container">
+    <canvas class="board" width="700" height="500" id="canvas">Su navegador no soporta canvas :( </canvas>
+</div>
+
+
+<script src="~/Scripts/board.js"></script>

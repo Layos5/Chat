@@ -1,0 +1,29 @@
+﻿
+<div class="panel panel-body">
+    <div class="row">
+        <div class="col-md-12">
+            <select id="sVideo" style="display: block; margin:0 auto"></select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="col-md-6">
+                <button id="play" class="btn btn-block btn-success" style="margin: 2% 0;">Iniciar</button>
+            </div>
+            <div class="col-md-6">
+                <button id="stop" class="btn btn-block btn-danger" style="margin: 2% 0;">Detener</button>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <video id="video" style="width:100%;height:500px;border: 1px solid;margin: 1% 0;"></video>
+        </div>
+        <div class="col-md-6">
+            @*<img src="" style="min-width:100%; width:100%; min-height:500px;border: 1px solid;margin: 1% 0;">*@
+            <canvas id="canvas" width="640" height="480" style="border: 1px solid;margin: 1% 0;"></canvas>
+        </div>
+    </div>
+</div>
+
+<script src="~/Scripts/CamLive.js"></script>

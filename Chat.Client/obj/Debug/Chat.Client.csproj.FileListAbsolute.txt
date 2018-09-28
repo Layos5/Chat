@@ -1,0 +1,10 @@
+C:\Users\Administrador\Documents\visual studio 2015\Projects\Chat\Chat.Client\bin\Debug\Chat.Client.exe.config
+C:\Users\Administrador\Documents\visual studio 2015\Projects\Chat\Chat.Client\bin\Debug\Chat.Client.exe
+C:\Users\Administrador\Documents\visual studio 2015\Projects\Chat\Chat.Client\bin\Debug\Chat.Client.pdb
+C:\Users\Administrador\Documents\visual studio 2015\Projects\Chat\Chat.Client\bin\Debug\Microsoft.AspNet.SignalR.Client.dll
+C:\Users\Administrador\Documents\visual studio 2015\Projects\Chat\Chat.Client\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Administrador\Documents\visual studio 2015\Projects\Chat\Chat.Client\bin\Debug\Microsoft.AspNet.SignalR.Client.xml
+C:\Users\Administrador\Documents\visual studio 2015\Projects\Chat\Chat.Client\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Administrador\Documents\visual studio 2015\Projects\Chat\Chat.Client\obj\Debug\Chat.Client.csprojResolveAssemblyReference.cache
+C:\Users\Administrador\Documents\visual studio 2015\Projects\Chat\Chat.Client\obj\Debug\Chat.Client.exe
+C:\Users\Administrador\Documents\visual studio 2015\Projects\Chat\Chat.Client\obj\Debug\Chat.Client.pdb

@@ -1,0 +1,9 @@
+C:\Users\Administrador\Documents\visual studio 2015\Projects\Chat\Chat.Client\bin\Release\Chat.Client.exe.config
+C:\Users\Administrador\Documents\visual studio 2015\Projects\Chat\Chat.Client\bin\Release\Chat.Client.exe
+C:\Users\Administrador\Documents\visual studio 2015\Projects\Chat\Chat.Client\bin\Release\Chat.Client.pdb
+C:\Users\Administrador\Documents\visual studio 2015\Projects\Chat\Chat.Client\bin\Release\Microsoft.AspNet.SignalR.Client.dll
+C:\Users\Administrador\Documents\visual studio 2015\Projects\Chat\Chat.Client\bin\Release\Newtonsoft.Json.dll
+C:\Users\Administrador\Documents\visual studio 2015\Projects\Chat\Chat.Client\bin\Release\Microsoft.AspNet.SignalR.Client.xml
+C:\Users\Administrador\Documents\visual studio 2015\Projects\Chat\Chat.Client\bin\Release\Newtonsoft.Json.xml
+C:\Users\Administrador\Documents\visual studio 2015\Projects\Chat\Chat.Client\obj\Release\Chat.Client.exe
+C:\Users\Administrador\Documents\visual studio 2015\Projects\Chat\Chat.Client\obj\Release\Chat.Client.pdb

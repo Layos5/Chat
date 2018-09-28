@@ -1,0 +1,87 @@
+﻿
+@{
+    ViewBag.Title = "Chat Server";
+}
+
+<div class="container">
+    <div class="row">
+        <h1 class="col-xs-12" id="who_is">Who are you?</h1>
+    </div>
+
+    <input type="hidden" id="displayname" />
+    <br />
+    <div class="row">
+        <div class="col-xs-12 col-lg-12" id="onlineUsers">
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <input type="text" id="chat-input" placeholder="To chat, type here and press Enter!" class="form-control" />
+            <hr />
+            <div id="chat-window">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+        $(function () {
+            // Declare a proxy to reference the hub.
+            var chat = $.connection.chat;
+
+            chat.client.showUsersOnLine = function (data) {
+
+                var content = "<table class='table table-resposive table-stripped'><th>Connection ID</th><th>Alias connected</th>";
+                $("#onlineUsers").html("");
+
+                $.each(data, function (k, v) {
+                    content += "<tr><td>" + v.UserConnecionId + "</td><td>" + v.UserName + "</td></tr>";
+                });
+                content += "</table>"
+                $("#onlineUsers").append(content);
+            };
+
+            var chatInput = $("#chat-input");
+            var chatWindow = $("#chat-window");
+            var userName;
+
+            //this is the function that's run when the "messageReceived" function is called from the server
+            chat.client.MessageReceived = function (username, message) {
+                chatWindow.append("<div><strong>" + username + ": </strong>" + message + "</div>");
+            };
+
+            //ask for a username
+            setTimeout(function () {
+                userName = prompt("Please enter a username.");
+                // Get the user name and store it to prepend to messages.
+                $('#displayname').val(userName);
+                $("#who_is").html($('#displayname').val());
+                $.connection.hub.qs = "userMail=" + $('#displayname').val();
+                // Set initial focus to message input box.
+                $('#message').focus();
+            }, 0);
+
+           
+            // Start the connection.
+            $.connection.hub.start().done(function () {
+                chatInput.keydown(function (e) {
+
+                    if (e.which === 13) {
+                        var text = chatInput.val();
+
+                        //empty the textbox
+                        chatInput.val("");
+
+                        //send the message to the server
+                        chat.server.sendMessage(userName, text);
+
+                        //focus cursor on the textbox for easy chatting!
+                        self.focus();
+                    }
+                });
+            });
+        });
+</script>
+
